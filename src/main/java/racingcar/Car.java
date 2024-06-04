@@ -18,4 +18,8 @@ public class Car {
     public int getLocation() {
         return location;
     }
+
+    public boolean isPossibleMove(int number) {
+        return number >= 4;
+    }
 }
