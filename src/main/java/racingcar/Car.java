@@ -1,5 +1,7 @@
 package racingcar;
 
+import java.util.Random;
+
 public class Car {
     String name;
     int location;
@@ -11,15 +13,15 @@ public class Car {
         this.name = name;
     }
 
-    public void move() {
-        this.location++;
+    public void move(int fuel) {
+        if (isPossibleMove(fuel)) this.location++;
     }
 
     public int getLocation() {
         return location;
     }
 
-    public boolean isPossibleMove(int number) {
+    private boolean isPossibleMove(int number) {
         return number >= 4;
     }
 }
