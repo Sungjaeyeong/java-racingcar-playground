@@ -1,11 +1,9 @@
 package racingcar;
 
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.*;
 
 class CarTest {
     @Test()
@@ -16,18 +14,17 @@ class CarTest {
     }
 
     @Test()
-    @DisplayName("자동차가 전진할 경우 위치가 1만큼 증가한다.")
-    void 자동차_전진시_위치_1증가() {
+    @DisplayName("자동차의 연료가 4 이상일 경우 위치가 1 증가한다.")
+    void 자동차_위치_1증가() {
         Car car = new Car("kia");
-        car.move();
+        car.move(4);
         assertThat(car.getLocation()).isEqualTo(1);
     }
-
     @Test()
-    @DisplayName("4")
-    void 전달값이_4이상인_경우_전진가능() {
+    @DisplayName("자동차의 연료가 4 미만일 경우 위치는 그대로다.")
+    void 자동차_위치_유지() {
         Car car = new Car("kia");
-        assertTrue(car.isPossibleMove(4));
-        assertFalse(car.isPossibleMove(3));
+        car.move(3);
+        assertThat(car.getLocation()).isEqualTo(0);
     }
 }
