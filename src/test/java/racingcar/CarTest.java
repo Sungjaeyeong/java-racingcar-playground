@@ -22,4 +22,12 @@ class CarTest {
         car.move();
         assertThat(car.getLocation()).isEqualTo(1);
     }
+
+    @Test()
+    @DisplayName("4")
+    void 전달값이_4이상인_경우_전진가능() {
+        Car car = new Car("kia");
+        assertTrue(car.isPossibleMove(4));
+        assertFalse(car.isPossibleMove(3));
+    }
 }
