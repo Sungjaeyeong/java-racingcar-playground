@@ -27,4 +27,11 @@ class CarTest {
         car.move(3);
         assertThat(car.getLocation()).isEqualTo(0);
     }
+
+    @Test()
+    @DisplayName("자동차의 위치만큼 '-'의 개수로 표현한다.")
+    void 자동차_위치_표시() {
+        Car car = new Car("kia", 4);
+        assertThat(car.markLocation()).isEqualTo("----");
+    }
 }
