@@ -16,8 +16,4 @@ class CarTest {
         assertThat(car.getPosition()).isEqualTo(new CarPosition(1));
     }
 
-    @Test
-    void 자동차_이름은_5자를_초과할_수_없다() {
-        assertThatThrownBy(() -> new Car("kiaaaa")).isInstanceOf(IllegalArgumentException.class);
-    }
 }
