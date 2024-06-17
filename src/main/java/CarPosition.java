@@ -7,6 +7,10 @@ public class CarPosition {
         this.position = position;
     }
 
+    public CarPosition plusOne() {
+        return new CarPosition(position + 1);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
