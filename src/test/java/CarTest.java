@@ -10,10 +10,16 @@ class CarTest {
     }
 
     @Test
-    void 자동차가_전진할_경우_위치는_1만큼_증가한다() {
+    void 랜덤값이_4이상이면_자동차가_전진한다() {
         Car car = new Car("kia");
-        car.move();
+        car.move(4);
         assertThat(car.getPosition()).isEqualTo(new CarPosition(1));
     }
 
+    @Test
+    void 랜덤값이_4미만이면_자동차가_전진하지_않는다() {
+        Car car = new Car("kia");
+        car.move(3);
+        assertThat(car.getPosition()).isEqualTo(new CarPosition(0));
+    }
 }
