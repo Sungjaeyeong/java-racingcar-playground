@@ -1,19 +1,19 @@
 public class Car {
     private String name;
-    private int position;
+    private CarPosition position;
 
     public Car(String name) {
         if (name.length() > 5)
             throw new IllegalArgumentException("자동차의 이름은 5자를 초과할 수 없습니다.");
         this.name = name;
+        this.position = new CarPosition(0);
     }
 
     public void move() {
-        position++;
+        position = position.plusOne();
     }
 
-    public int getPosition() {
+    public CarPosition getPosition() {
         return position;
     }
-
 }
