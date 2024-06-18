@@ -14,4 +14,11 @@ class CarPositionTest {
         CarPosition onePosition = zeroPosition.plusOne();
         assertThat(onePosition).isEqualTo(new CarPosition(1));
     }
+
+    @Test
+    void 위치_크기_비교() {
+        CarPosition zeroPosition = new CarPosition(0);
+        CarPosition onePosition = new CarPosition(1);
+        assertThat(onePosition.greaterThan(zeroPosition)).isTrue();
+    }
 }

@@ -11,6 +11,10 @@ public class CarPosition {
         return new CarPosition(position + 1);
     }
 
+    public boolean greaterThan(CarPosition position) {
+        return this.position > position.position;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
