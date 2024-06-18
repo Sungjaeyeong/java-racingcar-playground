@@ -22,4 +22,10 @@ class CarTest {
         car.move(3);
         assertThat(car.getPosition()).isEqualTo(new CarPosition(0));
     }
+
+    @Test
+    void 최대위치와_같으면_우승_자동차다() {
+        Car car = new Car("kia", 5);
+        assertThat(car.isWinner(new CarPosition(5))).isTrue();
+    }
 }
